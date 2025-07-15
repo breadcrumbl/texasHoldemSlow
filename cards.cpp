@@ -1,5 +1,5 @@
 #include "cards.h"
-#include "cardsTemplates.h"
+#include "cardsFunctions.h"
 
 #include <algorithm> // for std::sort
 #include <array>
@@ -37,7 +37,6 @@ Suit suitFromChar(char ch)
         return Suit::C;
     return Suit::noSuit;
 }
-
 
 Hand findBestHand(const std::array<Card, cardCount>& allCards)
 {

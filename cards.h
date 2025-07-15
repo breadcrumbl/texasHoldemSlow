@@ -75,12 +75,4 @@ struct Hand
     HandInfo handInfo {};
 };
 
-// Function declarations
-Hand findBestHand(const std::array<Card, cardCount>& allCards);
-void updateHandInfo(Hand& outHand);
-Hand returnStrongerOfTwoHands(const Hand& hand1, const Hand& hand2);
-int rankIntFromChar(char ch);
-Suit suitFromChar(char ch);
-void printHandType(const Hand& hand);
-
 #endif
