@@ -3,12 +3,16 @@
 
 #include <array>
 
-// Constants
-const char suitChar[] = {'X', 'H', 'S', 'D', 'C'};
-const char rankChar[] = {'X', 'X', '2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A'};
+// Global constants
+constexpr char suitChar[] = {'X', 'H', 'S', 'D', 'C'};
+constexpr char rankChar[] = {'X', 'X', '2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A'};
 
 constexpr int cardCount { 7 };
 constexpr int handSize { 5 };
+
+constexpr int suitCount { 4 };
+constexpr int rankCount { 13 };
+constexpr int cardsInDeck { 52 };
 
 // Enums
 enum class Suit
@@ -46,7 +50,7 @@ enum class HandType
 
 enum class Result 
 {
-    lose,
+    lose = 0,
     draw,
     win,
 };
