@@ -1,5 +1,5 @@
 #include "cards.h"
-#include "templates.h"
+#include "cardsTemplates.h"
 
 #include <algorithm> // for std::sort
 #include <array>

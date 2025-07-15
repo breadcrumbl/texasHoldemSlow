@@ -5,3 +5,7 @@ Input 7 poker cards via command line (e.g. ./main AS KD TC 5D ...) and the progr
 
 Plans:
 Calculate pot equity after flop, turn and river
+
+CL compilation shortcut:
+g++ -std=c++20 main.cpp cards.cpp -o main
+Example run:  ./main  TS JS QS KS AS 2C 7D
