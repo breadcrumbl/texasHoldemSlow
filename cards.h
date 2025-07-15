@@ -1,0 +1,86 @@
+#ifndef CARDS_H
+#define CARDS_H
+
+#include <array>
+
+// Constants
+const char suitChar[] = {'X', 'H', 'S', 'D', 'C'};
+const char rankChar[] = {'X', 'X', '2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A'};
+
+constexpr int cardCount { 7 };
+constexpr int handSize { 5 };
+
+// Enums
+enum class Suit
+{
+    noSuit,
+    H,
+    S,
+    D, 
+    C,
+};
+
+enum Rank
+{
+    T = 10,
+    J,
+    Q,
+    K,
+    A,
+};
+
+enum class HandType
+{
+    noHandType = 0,
+    highCard,
+    pair,
+    twoPair,
+    trio,
+    straight,
+    flush,
+    fullHouse,
+    quad,
+    straightFlush,
+    royalFlush,
+};
+
+enum class Result 
+{
+    lose,
+    draw,
+    win,
+};
+
+// Class Types
+struct Card
+{
+    int rank { 0 };
+    Suit suit { Suit:: noSuit };
+    bool isHole { false };
+};
+
+struct HandInfo
+{
+    HandType handType { HandType::noHandType };
+    int highCardRank { 0 };
+    int quadOf { 0 };
+    int trioOf { 0 };
+    int pairOf { 0 };
+    int twoPairOf { 0 };
+};
+
+struct Hand
+{
+    std::array<Card, handSize> cards {};
+    HandInfo handInfo {};
+};
+
+// Function declarations
+Hand findBestHand(const std::array<Card, cardCount>& allCards);
+void updateHandInfo(Hand& outHand);
+Hand returnStrongerOfTwoHands(const Hand& hand1, const Hand& hand2);
+int rankIntFromChar(char ch);
+Suit suitFromChar(char ch);
+void printHandType(const Hand& hand);
+
+#endif
