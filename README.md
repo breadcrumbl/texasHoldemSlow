@@ -1,11 +1,15 @@
 # tesxasHoldemSlow
 
-So far:
-Input 7 poker cards via command line (e.g. ./main AS KD TC 5D ...) and the program will return the best Texas Hold'em poker hand you can make
+Instructions:
+Feed 7 cards to CL as follows, where h indicates hole card
+./main  TSh JSh QS KS AS 2C 7D
 
-Plans:
-Calculate pot equity after flop, turn and river
+Program will calculate your best hand and your win rate (i.e. the percentage of times you win against every other
+possible two card combination your oponent could hold)
+
+TO-DO:
+* Include number of oponents in calc (e.g. if win against 90% of hands but 3 oponents, win rate = 0.9^3)
+* Calculate pot equity for flop, turn as well as river 
 
 CL compilation shortcut:
 g++ -std=c++20 main.cpp cards.cpp -o main
-Example run:  ./main  TSh JSh QS KS AS 2C 7D
