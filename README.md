@@ -8,4 +8,4 @@ Calculate pot equity after flop, turn and river
 
 CL compilation shortcut:
 g++ -std=c++20 main.cpp cards.cpp -o main
-Example run:  ./main  TS JS QS KS AS 2C 7D
+Example run:  ./main  TSh JSh QS KS AS 2C 7D

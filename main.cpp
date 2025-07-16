@@ -1,30 +1,20 @@
+#include "bestHand.h"
 #include "cards.h"
-#include "cardFunctions.h"
+#include "potEquity.h"
 
 #include <algorithm> // for std::sort
 #include <array>
 #include <iostream>
 
-template<std::size_t ROW, std::size_t COL>
-void printDeck(std::array<std::array<bool,COL>, ROW>& deck)
-{
-    for (int i { 0 }; i < ROW; ++i)
-    {
-        for (int j { 0 }; j < COL; ++j)
-        {
-            std::cout << deck[i][j] << " ";
-        }
-        std::cout << '\n';
-    }
-    std::cout << '\n';
-}
 
 int main(int argc, char* argv[])
 {
     // Get cards
     using enum Suit;
+    
     std::array<Card, cardCount> allCards {};
-    getCardsFromCL(allCards, argc, argv);
+    if(!getCardsFromCL(allCards, argc, argv))
+        return 1;
 
 
     Hand bestHand {};
@@ -32,7 +22,6 @@ int main(int argc, char* argv[])
     printCards(bestHand.cards);
     printHandType(bestHand);
     calculatePotEquity(allCards, bestHand);
-
 
 
     return 0;
