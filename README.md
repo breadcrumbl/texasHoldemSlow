@@ -8,7 +8,7 @@ Program will calculate your best hand and your win rate (i.e. the percentage of 
 possible two card combination your oponent could hold)
 
 TO-DO:
-* Include number of oponents in calc (e.g. if win against 90% of hands but 3 oponents, win rate = 0.9^3)
+* Include number of oponents in calc (e.g. if win against 90% of hands but 3 oponents, win rate ~ 0.9^3)
 * Calculate pot equity for flop, turn as well as river 
 
 CL compilation shortcut:
